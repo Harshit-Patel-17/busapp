@@ -43,6 +43,10 @@
         <activity
             android:name=".SearchBusResult"
             android:label="@string/title_activity_search_bus_result"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BusInfo"
+            android:label="@string/title_activity_bus_info"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

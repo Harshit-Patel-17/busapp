@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -69,6 +70,19 @@ public class SearchBusResult extends AppCompatActivity {
 
     private void populateResult() {
         searchBusResultListView.setAdapter(new MyBaseAdapter(buses, this));
+        searchBusResultListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                try {
+                    int busId = buses.getJSONObject(i).getInt("id");
+                    Intent intent = new Intent(getBaseContext(), BusInfo.class);
+                    intent.putExtra("busId", busId);
+                    startActivity(intent);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     public class MyBaseAdapter extends BaseAdapter {
