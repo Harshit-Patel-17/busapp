@@ -1,6 +1,6 @@
 <resources>
     <!-- Server IP address and port -->
-    <string name="server_ip_port">10.192.35.105:3000</string>
+    <string name="server_ip_port">10.237.27.221:3000</string>
 
     <string name="app_name">BusApp</string>
     <string name="action_settings">Settings</string>
